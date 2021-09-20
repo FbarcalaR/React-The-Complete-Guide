@@ -1,0 +1,11 @@
+for useEfect hook (executed after(?) rendering component):
+- only executed if the component is re-rendered AND its dependencies changed (by or)
+    like useEffect(()=>{}, [someVariable1, someVariable2]) -> will execute if someVariable1 or someVariable2 changed
+- if there are no dependencies, then it will be executed always the component is re-rendered
+    like useEffect(()=>{})
+- if the dependencies are an empty array, it will be executed only with first render of the component
+    like useEffect(()=>{}, [])
+- if the useEffect function returns a cleanup function, then that cleanup will be executed always before the first function, but not the first time
+    like useEffect(()=>{something return ()=>{somethingElse}}, ...)
+- if the use effect dependencies is an empty array, then its cleanup function will be executed only one time, after the component is 'unmounted'
+    like useEffect(()=>{something return ()=>{somethingElse}}, [])
