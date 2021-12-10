@@ -1,0 +1,4 @@
+React Context is good only for low-frequency changes (like login in for example)
+Not optimized for high-frequency changes, but Redux is.
+
+Also, with all the hooks-store folder thingy, it's possible to use a more optimized context without importing Redux.
